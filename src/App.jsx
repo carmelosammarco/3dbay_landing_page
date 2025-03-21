@@ -105,7 +105,6 @@ function App() {
     <Container>
       <Logo src={logo} alt="3DBay Logo" />
       <Subtitle>By Carmelo Sammarco</Subtitle>
-      <Subtitle>Sicilian4Ever</Subtitle>
       <LinkContainer>
         <ToolLink
           href="https://carmelosammarco.github.io/3DBAY-3D-printing_services/"
