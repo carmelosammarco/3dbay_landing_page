@@ -1,18 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-
-// Define keyframes *before* they are used
-const backgroundAnimation = keyframes`
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-`;
+import logo from './logo.png';
 
 const Container = styled.div`
   min-height: 100vh;
@@ -22,14 +10,13 @@ const Container = styled.div`
   justify-content: center;
   background:
     /* Subtle diagonal lines */
-    linear-gradient(135deg, rgba(255,255,255,0.1) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.1) 75%, transparent 75%, transparent),
+    linear-gradient(135deg, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.05) 75%, transparent 75%, transparent),
     /* Base gradient */
-    linear-gradient(to bottom, #a8c1ff, #74d1ff); /* Lighter gradient */
-  background-size: 20px 20px, 100% 100%;
+    linear-gradient(to bottom, #2a2a72, #009ffd); 
+  background-size: 20px 20px, 100% 100%; /* Control the size of the lines */
   color: white;
   text-align: center;
   padding: 20px;
-  /*animation: ${backgroundAnimation} 15s ease infinite;  Removed animation */
 `;
 
 const Logo = styled.img`
@@ -74,25 +61,25 @@ const buttonHoverAnimation = keyframes`
 `;
 
 const ToolLink = styled.a`
-  background-color: #ff6b6b;
+  background-color: #ff6b6b; /* Reddish-orange */
   color: #fff;
   padding: 15px 30px;
-  border-radius: 8px;
+  border-radius: 8px; /* Less rounded corners */
   text-decoration: none;
   font-weight: bold;
-  box-shadow: 4px 4px 0px #333;
+  box-shadow: 4px 4px 0px #333; /* Offset box shadow */
   transition: all 0.2s ease;
-  border: 2px solid #333;
+  border: 2px solid #333; /* Dark border */
   width: 80%;
   box-sizing: border-box;
   position: relative;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Courier New', Courier, monospace; /* Retro font */
 
   &:hover {
     animation: ${buttonHoverAnimation} 0.3s ease;
-    background-color: #ff8c8c;
-    box-shadow: 2px 2px 0px #333;
-    transform: translate(2px, 2px);
+    background-color: #ff8c8c; /* Lighter shade on hover */
+    box-shadow: 2px 2px 0px #333; /* Reduced shadow on hover */
+    transform: translate(2px, 2px); /* Move slightly up and left */
   }
 
   @media (max-width: 768px) {
@@ -100,7 +87,6 @@ const ToolLink = styled.a`
     font-size: 0.9em;
   }
 `;
-
 const BlogLink = styled.a`
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
@@ -117,7 +103,8 @@ const BlogLink = styled.a`
 function App() {
   return (
     <Container>
-      <Logo src="https://i.imgur.com/CXYcKLy.png" alt="3DBay Logo" />
+      <Logo src={logo} alt="3DBay Logo" />
+      <Subtitle>By Carmelo Sammarco</Subtitle>
       <LinkContainer>
         <ToolLink
           href="https://carmelosammarco.github.io/3DBAY-3D-printing_services/"
