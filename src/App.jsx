@@ -117,7 +117,7 @@ const BlogLink = styled.a`
 function App() {
   return (
     <Container>
-      <Logo src="https://i.imgur.com/CXYcKLy.png" alt="3DBay Logo" />
+      <Logo src="https://i.imgur.com/CsVkat2.png" alt="3DBay Logo" />
       <LinkContainer>
       
         <ToolLink
